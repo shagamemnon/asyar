@@ -289,7 +289,7 @@
   >
     <!-- The leading slot sits in the row-icon column, so the query starts on
          the same x as every row title below it. Inside a view the back button
-         takes the slot; at the root it shows the Asyar mark. -->
+         takes the slot; at the root it stays empty to preserve that alignment. -->
     <span class="leading-slot">
       {#if showBack}
         <button
@@ -302,17 +302,6 @@
         >
           <KeyboardHint keys="←" />
         </button>
-      {:else}
-        <svg class="asyar-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M12 3.5 5.4 18.8h13.2L12 3.5Z" fill="currentColor" opacity="0.28" />
-          <path
-            d="M12 3.5 5.4 18.8M12 3.5l6.6 15.3"
-            stroke="currentColor"
-            stroke-width="1.6"
-            stroke-linecap="round"
-          />
-          <ellipse cx="12" cy="18.8" rx="6.6" ry="2" fill="currentColor" />
-        </svg>
       {/if}
     </span>
 
@@ -532,10 +521,6 @@
     align-items: center;
     justify-content: center;
     color: var(--text-secondary);
-  }
-  .asyar-mark {
-    width: 100%;
-    height: 100%;
   }
   .back-button-new {
     display: inline-flex;
